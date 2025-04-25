@@ -1515,6 +1515,8 @@
       
         
       
+        
+      
     
     
     
@@ -1637,6 +1639,29 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../Data-Model/governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Governance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -1661,10 +1686,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
             
   
   
@@ -1677,8 +1702,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             Core Resources
           </label>
@@ -1809,10 +1834,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
             
   
   
@@ -1825,8 +1850,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
             Business requirements
           </label>
@@ -3288,6 +3313,27 @@
 - Freight forwarder has an agreement with Airline to file data on its behalf.
 - Data is filed at House level for consolidated shipment.</p>
 <p><img alt="image" src="https://github.com/user-attachments/assets/14d8db94-1d47-4672-b2e4-050da5bb5e23" /></p>
+<pre class="mermaid"><code>graph LR
+  A[Freight Forwarder notifies that HAWB content is ready - Event on Shipment] --&gt; B[Customs validates content];
+  B --&gt; C{Validation succesful?};
+  C --&gt;|Yes| D[Customs notifies that Shipment is OK - Event on Shipment SR];
+  C --&gt;|No| E[Customs notifies that there is an error - Event on Shipment Error];
+  D --&gt; F{Additional information or screening needed?};
+  F --&gt;|Yes| G[Customs notifies RFI or RFS - Event on Shipment RFI or RFS];
+  F --&gt;|No| H{Risk assessment completed?};
+  H --&gt;|Yes| I{Assessment outcome};
+  I --&gt;|Blocked - RFI or RFS| J[CB - 7H, 7J, 8H, 8J];
+  I --&gt;|Customs Hold - DNL| K[CD - 6H, 6J];
+  I --&gt;|Customs Release - OK| L[CO - SF, 6I, 7I, 8I];
+  D --&gt; M[Freight Forwarder notified automatically];
+  E --&gt; M;
+  G --&gt; M;
+  J --&gt; M;
+  K --&gt; M;
+  L --&gt; M;
+  M --&gt; N{MAWB# available?};
+  N --&gt;|Yes| O[Carrier notified automatically via the MAWB object];
+</code></pre>
 <p>In this scenario, the Freight Forwarder notifies the Customs that data is ready to be processed via an Event on the Shipment object. Then based on Customs validation and risk assessment, different Events are added on the Shipment <strong>by the Customs</strong> via the Change Request mechanism.</p>
 <p>If there is a MAWB number available, usually the Waybill objects of the House and the Master are already linked and the Airline can get notified automatically if Events are created.</p>
 <h3 id="process-2-freight-forwarder-filing-pre-loading-data-for-non-consolidation-shipment">Process #2: Freight forwarder filing pre-loading data for non-consolidation shipment<a class="headerlink" href="#process-2-freight-forwarder-filing-pre-loading-data-for-non-consolidation-shipment" title="Permanent link">&para;</a></h3>
