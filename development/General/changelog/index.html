@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1769,6 +1769,8 @@
       
         
       
+        
+      
     
     
     
@@ -1866,6 +1868,29 @@
   
   <span class="md-ellipsis">
     Code Lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data-Model/skeleton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Skeleton indicator
     
   </span>
   
@@ -2263,6 +2288,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2323,6 +2352,52 @@
   
   <span class="md-ellipsis">
     CargoXML Mapping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Orchestration/xfwb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    XFWB Mapping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Orchestration/placi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PLACI implementation
     
   </span>
   
@@ -2411,10 +2486,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
             
   
   
@@ -2427,8 +2502,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             MOP mapping
           </label>
@@ -3298,58 +3373,19 @@
 <h3 id="detailed-changelog">Detailed changelog<a class="headerlink" href="#detailed-changelog" title="Permanent link">&para;</a></h3>
 <p>Below is the detailed changelog:</p>
 <ul>
-<li>Added custom annotations for WIP visualisation: Inverse and Element (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/236">https://github.com/IATA-Cargo/ONE-Record/issues/236</a>) </li>
-<li>Added TemperatureInstructions to Piece (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/227"> #Add temperatureInstructons at Piece level #227</a>)</li>
-<li>Removed Shipment#specialHandlingcodes (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/228">Remove Shipment#specialHandlingcodes #228</a>)</li>
-<li>Renamed label of WaybillLineItem properly (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/234">Rename label of WaybillLineItem properly #234</a>)</li>
-<li>Changed partyDetails to LogisticsAgent (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/222">Change partyDetails type #222</a>)</li>
-<li>Fixed regex pattern of waybillNumber (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/213">waybillNumber xsd:pattern "[-9]+" incorrect, could be "[-0-9]+" #213</a>)</li>
-<li>Removed line breaks in rdfs:comment annotations</li>
-<li>Reassignment of Agents, LoadingUnit for visualization</li>
-<li>Updated Code List Element documentation</li>
-<li>Fixes to Code List md and examples</li>
-<li>Added temperatureInstructions to Piece (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/227"> #Add temperatureInstructons at Piece level #227</a>)</li>
-<li>Added new property textualPostalCode to Address (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/221">Change Address#postalCode type #221</a>)</li>
-<li>Added new property operatingParties to TransportMovement (https://github.com/IATA-Cargo/ONE-Record/issues/229)</li>
-<li>Added new class AccountingNote <a href="https://github.com/IATA-Cargo/ONE-Record/issues/231">(Review of Waybill#accountingInformation #231)</a></li>
-<li>Added new property accountingNoteIdentifier to AccountingNote <a href="https://github.com/IATA-Cargo/ONE-Record/issues/231">(Review of Waybill#accountingInformation #231)</a></li>
-<li>Added new property accountingNoteText to AccountingNote <a href="https://github.com/IATA-Cargo/ONE-Record/issues/231">(Review of Waybill#accountingInformation #231)</a></li>
-<li>Added new property accountingNotes to Waybill <a href="https://github.com/IATA-Cargo/ONE-Record/issues/231">(Review of Waybill#accountingInformation #231)</a></li>
-<li>Added new property locationIndicator to OtherCharge <a href="https://github.com/IATA-Cargo/ONE-Record/issues/247">(CXML Mapping XFWB - Add missing fields #247)</a> - max 1, Location</li>
-<li>Added new property reasonDescription to OtherCharge <a href="https://github.com/IATA-Cargo/ONE-Record/issues/247">(CXML Mapping XFWB - Add missing fields #247)</a> - max 1, string</li>
-<li>Added new property chargeQuantity to OtherCharge <a href="https://github.com/IATA-Cargo/ONE-Record/issues/247">(CXML Mapping XFWB - Add missing fields #247)</a> - max 1, double</li>
-<li>Deprecated postalCode in favor of textualPostalCode <a href="https://github.com/IATA-Cargo/ONE-Record/issues/221">(Change Address#postalCode type #221)</a></li>
-<li>Deprecated accountingInformation in favor of AccountingNote and included properties <a href="https://github.com/IATA-Cargo/ONE-Record/issues/231">(Review of Waybill#accountingInformation #231)</a></li>
-<li>Removed specialHandlingCodes from Shipment <a href="https://github.com/IATA-Cargo/ONE-Record/issues/228">(Remove Shipment#specialHandlingcodes #228)</a></li>
-<li>Changed value of partyDetails from Organization to LogisticsAgent <a href="https://github.com/IATA-Cargo/ONE-Record/issues/222">(Change partyDetails type #222)</a></li>
-<li>Lifted cardinality restriction on regulatedEntityAcceptor in SecurityDeclaration <a href="https://github.com/IATA-Cargo/ONE-Record/issues/244">(Set securityDeclaration#regulatedEntityAcceptor as an array #244)</a></li>
-<li>Added new code-lists ontology <a href="https://github.com/IATA-Cargo/ONE-Record/issues/268">(DM: Refactor core code list ontology URIs to adhere to linked data best practices #268)</a></li>
-<li>Deprecated coreCodeLists ontology <a href="https://github.com/IATA-Cargo/ONE-Record/issues/268">(DM: Refactor core code list ontology URIs to adhere to linked data best practices #268)</a></li>
-<li>Added new code list DensityGroupCodes <a href="https://github.com/IATA-Cargo/ONE-Record/issues/248">(CXML Mapping XFWB - Add Code List 2 to ontology #248)</a></li>
-<li>Added property densityGroupCode to BookingShipment <a href="https://github.com/IATA-Cargo/ONE-Record/issues/230">(Add Density Group Code data property #230)</a></li>
-<li>Mirrored DGR and Security Status Codes to the Special Handling Codes namespace for simplification as part of code list review <a href="https://github.com/IATA-Cargo/ONE-Record/issues/268">(DM: Refactor core code list ontology URIs to adhere to linked data best practices #268)</a></li>
+<li>Added cityName to Address (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/287">Add cityName to Address #287</a>)</li>
+<li>Added open AccountType code list with FF, CONSIGNEE, CONSIGNOR as NamedIndividuals (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/277">CXML Mapping DM: add property Party#accountNumber #277</a></li>
+<li>Added AccountNumber object (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/277">CXML Mapping DM: add property Party#accountNumber #277</a></li>
+<li>Added textualValue to AccountNumber (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/277">CXML Mapping DM: add property Party#accountNumber #277</a></li>
+<li>Added new accountNumberType property (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/277">CXML Mapping DM: add property Party#accountNumber #277</a></li>
+<li>Added new accountNumbers property to Party (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/277">CXML Mapping DM: add property Party#accountNumber #277</a></li>
+<li>Added HandlingService object (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/271">DM: Add more generic "HandlingService" LO as sub-class of LogisticsService to transmit LogisticsActivities not part of the Carrier-Forwarder Booking #271</a>)</li>
+<li>Added new serviceProvider property to HandlingService (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/271">DM: Add more generic "HandlingService" LO as sub-class of LogisticsService ... #271</a>)</li>
+<li>Added new serviceRequestor property to HandlingService (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/271">DM: Add more generic "HandlingService" LO as sub-class of LogisticsService ... #271</a>)</li>
+<li>Added new serviceForWaybills property to HandlingService (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/271">DM: Add more generic "HandlingService" LO as sub-class of LogisticsService ... #271</a>)</li>
+<li>Added new handlingServiceFor property to HandlingService (<a href="https://github.com/IATA-Cargo/ONE-Record/issues/271">DM: Add more generic "HandlingService" LO as sub-class of LogisticsService ... #271</a>)</li>
 </ul>
-<p>Rework to WaybillLineItem (#265) as agreed on in DMWG 17/10 and CXML 12/11.</p>
-<ul>
-<li>Added new property pieceReferences to WaybillLineItem <a href="https://github.com/IATA-Cargo/ONE-Record/issues/265">(CXML Mapping XFWB - Multiple dimensions for TransportLogisticsPackage grouping #265)</a></li>
-<li>Added new property uldReferences to WaybillLineItem (#265)</li>
-<li>Deprecated and removed chargeableWeightForRate from WaybillLineItem (#265)</li>
-<li>Deprecated and removed commodityItemNumberForRate from WaybillLineItem (#265)</li>
-<li>Deprecated and removed dimensionsForRate from WaybillLineItem (#265)</li>
-<li>Deprecated and removed goodsDescriptionForRate from WaybillLineItem (#265)</li>
-<li>Deprecated and removed grossWeightForRate from WaybillLineItem (#265)</li>
-<li>Deprecated and removed hsCodeForRate from WaybillLineItem (#265)</li>
-<li>Deprecated and removed pieceCountForRate from WaybillLineItem (#265)</li>
-<li>Deprecated and removed productionCountryForRate from WaybillLineItem (#265)</li>
-<li>Deprecated and removed slacForRate from WaybillLineItem (#265)</li>
-<li>Deprecated and removed uldTareWeightForRate from WaybillLineItem (#265)</li>
-<li>Deprecated and removed volumetricWeightForRate from WaybillLineItem (#265)</li>
-<li>Removed uldOwnerCode from WaybillLineItem (#265)</li>
-<li>Removed uldSerialNumber from WaybillLineItem (#265)</li>
-<li>Removed uldType from WaybillLineItem (#265)</li>
-<li>Lifted cardinality restriction on ofShipment in Piece <a href="https://github.com/IATA-Cargo/ONE-Record/issues/275">(DM: Piece can be part of multiple shipments, change from n:1 to n:n #275)</a></li>
-<li>Lifted cardinality restriction on issuedForPiece in SecurityDeclaration <a href="https://github.com/IATA-Cargo/ONE-Record/issues/280">#280</a></li>
-</ul>
+<p>to be finished with commits</p>
 <h2 id="api-210">API 2.1.0<a class="headerlink" href="#api-210" title="Permanent link">&para;</a></h2>
 <p>For this release, all changes have been tracked using GitHub project view: <a href="https://github.com/users/IATA-Cargo/projects/4">API Changes</a>.</p>
 <h3 id="detailed-changelog_1">Detailed changelog<a class="headerlink" href="#detailed-changelog_1" title="Permanent link">&para;</a></h3>
@@ -3454,10 +3490,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": ["stable"], "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": ["stable"], "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       

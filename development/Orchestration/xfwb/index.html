@@ -12,13 +12,13 @@
         <meta name="author" content="IATA">
       
       
-        <link rel="canonical" href="https://iata-cargo.github.io/ONE-Record/development/General/Getting-Started-with-ONE-Record/">
+        <link rel="canonical" href="https://iata-cargo.github.io/ONE-Record/development/Orchestration/xfwb/">
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../orchestration-cxml/">
       
       
-        <link rel="next" href="../resources/">
+        <link rel="next" href="../placi/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Getting Started with ONE Record - ONE Record Specification</title>
+        <title>XFWB Mapping - ONE Record Specification</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#getting-started-with-one-record" class="md-skip">
+        <a href="#xfwb-message" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Getting Started with ONE Record
+              XFWB Mapping
             
           </span>
         </div>
@@ -239,12 +239,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../.." class="md-tabs__link">
           
   
@@ -307,11 +305,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../Orchestration/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -401,8 +401,6 @@
       
   
   
-    
-  
   
   
     
@@ -426,19 +424,18 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -455,13 +452,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             General information
@@ -474,30 +471,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Getting Started with ONE Record
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../General/Getting-Started-with-ONE-Record/" class="md-nav__link">
         
   
   
@@ -508,198 +485,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#getting-started-with-one-record" class="md-nav__link">
-    <span class="md-ellipsis">
-      Getting Started with ONE Record
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Getting Started with ONE Record">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#1-understanding-the-technical-concepts" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Understanding the Technical Concepts
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Understanding the Technical Concepts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#one-record-data-model-and-ontologies" class="md-nav__link">
-    <span class="md-ellipsis">
-      ONE Record Data Model and Ontologies
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#logistics-objects-and-digital-twins" class="md-nav__link">
-    <span class="md-ellipsis">
-      Logistics Objects and Digital Twins
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linked-data-and-semantic-web" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linked Data and Semantic Web
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#api-and-security" class="md-nav__link">
-    <span class="md-ellipsis">
-      API and Security
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-getting-started-with-a-simple-implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Getting Started with a Simple Implementation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Getting Started with a Simple Implementation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#setting-up-an-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Setting Up an Environment
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Setting Up an Environment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#open-source-implementation-of-one-record-neone" class="md-nav__link">
-    <span class="md-ellipsis">
-      Open source implementation of ONE Record (NE:ONE)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creating-and-managing-logistics-objects" class="md-nav__link">
-    <span class="md-ellipsis">
-      Creating and Managing Logistics Objects
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-understanding-and-implementing-data-orchestration" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Understanding and Implementing Data Orchestration
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Understanding and Implementing Data Orchestration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#overview-of-data-orchestration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview of Data Orchestration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#role-in-one-record" class="md-nav__link">
-    <span class="md-ellipsis">
-      Role in ONE Record
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#setting-up-orchestration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Setting Up Orchestration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#implementing-orchestration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Implementing Orchestration
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -712,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../resources/" class="md-nav__link">
+      <a href="../../General/resources/" class="md-nav__link">
         
   
   
@@ -735,7 +520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../community/" class="md-nav__link">
+      <a href="../../General/community/" class="md-nav__link">
         
   
   
@@ -758,7 +543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../license/" class="md-nav__link">
+      <a href="../../General/license/" class="md-nav__link">
         
   
   
@@ -793,13 +578,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -808,7 +590,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_6" >
         
           
-          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
             
   
   
@@ -835,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../release-note/" class="md-nav__link">
+      <a href="../../General/release-note/" class="md-nav__link">
         
   
   
@@ -858,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../changelog/" class="md-nav__link">
+      <a href="../../General/changelog/" class="md-nav__link">
         
   
   
@@ -2401,6 +2183,8 @@
       
   
   
+    
+  
   
   
     
@@ -2422,22 +2206,23 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Orchestration/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -2450,13 +2235,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Data Orchestration
@@ -2472,7 +2257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-cxml/" class="md-nav__link">
+      <a href="../orchestration-cxml/" class="md-nav__link">
         
   
   
@@ -2492,10 +2277,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Orchestration/xfwb/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    XFWB Mapping
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2506,6 +2311,108 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#xfwb-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      XFWB Message
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="XFWB Message">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xfwb-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      XFWB purpose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xfwb-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      XFWB Mapping
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="XFWB Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proposed-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proposed mechanism
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-of-waybilllineitem-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage of WaybillLineItem object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transportmovement-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      TransportMovement information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-of-othercharge-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage of OtherCharge object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-specific-mapping-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other specific mapping guidelines
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2518,7 +2425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/placi/" class="md-nav__link">
+      <a href="../placi/" class="md-nav__link">
         
   
   
@@ -2603,10 +2510,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2615,7 +2525,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
             
   
   
@@ -2642,7 +2552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-mop/" class="md-nav__link">
+      <a href="../orchestration-mop/" class="md-nav__link">
         
   
   
@@ -2665,7 +2575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-01/" class="md-nav__link">
+      <a href="../orchestration-01/" class="md-nav__link">
         
   
   
@@ -2688,7 +2598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-02/" class="md-nav__link">
+      <a href="../orchestration-02/" class="md-nav__link">
         
   
   
@@ -2711,7 +2621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-mvt01/" class="md-nav__link">
+      <a href="../orchestration-mvt01/" class="md-nav__link">
         
   
   
@@ -2734,7 +2644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-03/" class="md-nav__link">
+      <a href="../orchestration-03/" class="md-nav__link">
         
   
   
@@ -2757,7 +2667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-04/" class="md-nav__link">
+      <a href="../orchestration-04/" class="md-nav__link">
         
   
   
@@ -2780,7 +2690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-mvt02/" class="md-nav__link">
+      <a href="../orchestration-mvt02/" class="md-nav__link">
         
   
   
@@ -2803,7 +2713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-05/" class="md-nav__link">
+      <a href="../orchestration-05/" class="md-nav__link">
         
   
   
@@ -2826,7 +2736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-06/" class="md-nav__link">
+      <a href="../orchestration-06/" class="md-nav__link">
         
   
   
@@ -2849,7 +2759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-mvt03/" class="md-nav__link">
+      <a href="../orchestration-mvt03/" class="md-nav__link">
         
   
   
@@ -2872,7 +2782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-07/" class="md-nav__link">
+      <a href="../orchestration-07/" class="md-nav__link">
         
   
   
@@ -2895,7 +2805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-08/" class="md-nav__link">
+      <a href="../orchestration-08/" class="md-nav__link">
         
   
   
@@ -2918,7 +2828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-09/" class="md-nav__link">
+      <a href="../orchestration-09/" class="md-nav__link">
         
   
   
@@ -2941,7 +2851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-10/" class="md-nav__link">
+      <a href="../orchestration-10/" class="md-nav__link">
         
   
   
@@ -2964,7 +2874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-11/" class="md-nav__link">
+      <a href="../orchestration-11/" class="md-nav__link">
         
   
   
@@ -2987,7 +2897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-12/" class="md-nav__link">
+      <a href="../orchestration-12/" class="md-nav__link">
         
   
   
@@ -3010,7 +2920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-13/" class="md-nav__link">
+      <a href="../orchestration-13/" class="md-nav__link">
         
   
   
@@ -3033,7 +2943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-14/" class="md-nav__link">
+      <a href="../orchestration-14/" class="md-nav__link">
         
   
   
@@ -3056,7 +2966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-15/" class="md-nav__link">
+      <a href="../orchestration-15/" class="md-nav__link">
         
   
   
@@ -3079,7 +2989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-16/" class="md-nav__link">
+      <a href="../orchestration-16/" class="md-nav__link">
         
   
   
@@ -3102,7 +3012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-mvt04/" class="md-nav__link">
+      <a href="../orchestration-mvt04/" class="md-nav__link">
         
   
   
@@ -3125,7 +3035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-17/" class="md-nav__link">
+      <a href="../orchestration-17/" class="md-nav__link">
         
   
   
@@ -3148,7 +3058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-18/" class="md-nav__link">
+      <a href="../orchestration-18/" class="md-nav__link">
         
   
   
@@ -3171,7 +3081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-19/" class="md-nav__link">
+      <a href="../orchestration-19/" class="md-nav__link">
         
   
   
@@ -3194,7 +3104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-20/" class="md-nav__link">
+      <a href="../orchestration-20/" class="md-nav__link">
         
   
   
@@ -3217,7 +3127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-mvt05/" class="md-nav__link">
+      <a href="../orchestration-mvt05/" class="md-nav__link">
         
   
   
@@ -3240,7 +3150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Orchestration/orchestration-21/" class="md-nav__link">
+      <a href="../orchestration-21/" class="md-nav__link">
         
   
   
@@ -3413,164 +3323,74 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-started-with-one-record" class="md-nav__link">
+  <a href="#xfwb-message" class="md-nav__link">
     <span class="md-ellipsis">
-      Getting Started with ONE Record
+      XFWB Message
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Getting Started with ONE Record">
+    <nav class="md-nav" aria-label="XFWB Message">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
+  <a href="#xfwb-purpose" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction
+      XFWB purpose
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#1-understanding-the-technical-concepts" class="md-nav__link">
+  <a href="#xfwb-mapping" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Understanding the Technical Concepts
+      XFWB Mapping
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Understanding the Technical Concepts">
+    <nav class="md-nav" aria-label="XFWB Mapping">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#one-record-data-model-and-ontologies" class="md-nav__link">
+  <a href="#proposed-mechanism" class="md-nav__link">
     <span class="md-ellipsis">
-      ONE Record Data Model and Ontologies
+      Proposed mechanism
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#logistics-objects-and-digital-twins" class="md-nav__link">
+  <a href="#usage-of-waybilllineitem-object" class="md-nav__link">
     <span class="md-ellipsis">
-      Logistics Objects and Digital Twins
+      Usage of WaybillLineItem object
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#linked-data-and-semantic-web" class="md-nav__link">
+  <a href="#transportmovement-information" class="md-nav__link">
     <span class="md-ellipsis">
-      Linked Data and Semantic Web
+      TransportMovement information
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#api-and-security" class="md-nav__link">
+  <a href="#usage-of-othercharge-object" class="md-nav__link">
     <span class="md-ellipsis">
-      API and Security
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-getting-started-with-a-simple-implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Getting Started with a Simple Implementation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Getting Started with a Simple Implementation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#setting-up-an-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Setting Up an Environment
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Setting Up an Environment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#open-source-implementation-of-one-record-neone" class="md-nav__link">
-    <span class="md-ellipsis">
-      Open source implementation of ONE Record (NE:ONE)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creating-and-managing-logistics-objects" class="md-nav__link">
-    <span class="md-ellipsis">
-      Creating and Managing Logistics Objects
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-understanding-and-implementing-data-orchestration" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Understanding and Implementing Data Orchestration
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Understanding and Implementing Data Orchestration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#overview-of-data-orchestration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview of Data Orchestration
+      Usage of OtherCharge object
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#role-in-one-record" class="md-nav__link">
+  <a href="#other-specific-mapping-guidelines" class="md-nav__link">
     <span class="md-ellipsis">
-      Role in ONE Record
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#setting-up-orchestration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Setting Up Orchestration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#implementing-orchestration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Implementing Orchestration
+      Other specific mapping guidelines
     </span>
   </a>
   
@@ -3602,7 +3422,7 @@
 
 
   
-    <a href="https://github.com/IATA-Cargo/ONE-Record/edit/master/Documentation_website/docs/General/Getting-Started-with-ONE-Record.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/IATA-Cargo/ONE-Record/edit/master/Documentation_website/docs/Orchestration/xfwb.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3611,67 +3431,44 @@
     
       
     
-    <a href="https://github.com/IATA-Cargo/ONE-Record/raw/master/Documentation_website/docs/General/Getting-Started-with-ONE-Record.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/IATA-Cargo/ONE-Record/raw/master/Documentation_website/docs/Orchestration/xfwb.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>Getting Started with ONE Record</h1>
+  <h1>XFWB Mapping</h1>
 
-<h2 id="getting-started-with-one-record">Getting Started with ONE Record<a class="headerlink" href="#getting-started-with-one-record" title="Permanent link">&para;</a></h2>
-<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
-<p>Welcome to the "Getting Started with ONE Record" guide. This comprehensive document is designed to equip you with the knowledge and tools necessary to effectively implement and utilize the ONE Record standard in your logistics operations. By following this guide, you'll gain a deep understanding of technical concepts, establish a simple implementation, learn how to customize the system to meet your specific organizational needs, and see how data orchestration plays a critical role.</p>
-<h3 id="1-understanding-the-technical-concepts">1. Understanding the Technical Concepts<a class="headerlink" href="#1-understanding-the-technical-concepts" title="Permanent link">&para;</a></h3>
-<h4 id="one-record-data-model-and-ontologies">ONE Record Data Model and Ontologies<a class="headerlink" href="#one-record-data-model-and-ontologies" title="Permanent link">&para;</a></h4>
-<p>The ONE Record data model underpins the digital ecosystem of logistics operations. It is grounded in two primary ontologies:</p>
-<p>- <strong>Cargo Ontology</strong>: This ontology is pivotal as it encapsulates the industry concepts, the relationships between various logistics entities, and their properties. It offers a detailed framework for understanding and representing logistics processes digitally.</p>
-<p>- <strong>Core Code Lists Ontology</strong>: This defines essential industry code lists, capturing standardized identifiers used across logistics operations. These named individuals ensure uniformity in referencing codes and streamline operations by minimizing ambiguities in data interpretation.</p>
-<p>*Please refer to documentation on the <a href="https://iata-cargo.github.io/ONE-Record/development/Data-Model/">data model</a></p>
-<h4 id="logistics-objects-and-digital-twins">Logistics Objects and Digital Twins<a class="headerlink" href="#logistics-objects-and-digital-twins" title="Permanent link">&para;</a></h4>
-<p>In the world of ONE Record, Logistics Objects form the cornerstone of logistics modeling. They serve as:</p>
-<p>- <strong>Digital Twins</strong>: Virtual models mirroring physical entities such as containers, shipments, or pallets. This concept allows for the tracking and monitoring of logistics objects with great precision throughout the supply chain.</p>
-<p>- <strong>Granular Representation</strong>: Logistics Objects can range from broad entities like shipments to more granular units like pieces or sensors, enabling a detailed view and management of logistics operations.</p>
-<p><em>Please refer to documentation on the</em> <a href="https://iata-cargo.github.io/ONE-Record/development/Data-Model/">data model</a></p>
-<h4 id="linked-data-and-semantic-web">Linked Data and Semantic Web<a class="headerlink" href="#linked-data-and-semantic-web" title="Permanent link">&para;</a></h4>
-<p>ONE Record leverages cutting-edge web standards to foster interconnected data ecosystems:</p>
-<p>- <strong>Linked Data Principles</strong>: Using RDF formats, ONE Record supports seamless integration and querying of data across diverse platforms. This interconnectedness is the backbone of a robust and responsive logistics network.</p>
-<p>- <strong>Semantic Web Technologies</strong>: By embedding meaning within data, ONE Record facilitates smarter data operations, allowing machines and applications to comprehend, infer, and adapt logistics data contextually.</p>
-<p><em>Please refer to documentation on the</em> <a href="https://iata-cargo.github.io/ONE-Record/development/API-Security/">API and Security</a></p>
-<h4 id="api-and-security">API and Security<a class="headerlink" href="#api-and-security" title="Permanent link">&para;</a></h4>
-<p>Ensuring secure and efficient data exchange is paramount in ONE Record:</p>
-<p>- <strong>API Architecture</strong>: The ONE Record API uses stateless communication methods to facilitate interactions among stakeholders. The RESTful design ensures logistics data can be shared reliably.</p>
-<p>- <strong>Security Measures</strong>: Incorporating Transport Layer Security (TLS) and OpenID Connect, ONE Record ensures secure authentication and data protection, preventing unauthorized access and guaranteeing data integrity.</p>
-<p><em>Please refer to documentation on the</em> <a href="https://iata-cargo.github.io/ONE-Record/development/API-Security/">API and Security</a></p>
-<h3 id="2-getting-started-with-a-simple-implementation">2. Getting Started with a Simple Implementation<a class="headerlink" href="#2-getting-started-with-a-simple-implementation" title="Permanent link">&para;</a></h3>
-<h4 id="setting-up-an-environment">Setting Up an Environment<a class="headerlink" href="#setting-up-an-environment" title="Permanent link">&para;</a></h4>
-<p>To initiate a ONE Record implementation, set up a conducive development environment.</p>
-<p>For first timers, it is <em>strongly</em> recommended to work with the NE:ONE server. It can be deployed in less than an hour and provides 100% ONE Record capabilities out-of-the-box.</p>
-<h6 id="open-source-implementation-of-one-record-neone">Open source implementation of ONE Record (NE:ONE)<a class="headerlink" href="#open-source-implementation-of-one-record-neone" title="Permanent link">&para;</a></h6>
-<p>Developed by the <a href="https://www.digital-testbed-air-cargo.com/">DTAC</a>, the <strong>NE:ONE</strong> server is a “data hub” based on the IATA ONE Record standard for air freight. The project has developed an open source server software package, which implements the data model and API specifications of the IATA ONE Record standard for air freight.</p>
-<p>To deploy a NE:ONE stack in few minutes clone the repository <a href="https://github.com/IATA-Cargo/one-record-first-steps/tree/main">ONE Record first steps</a>.</p>
-<p>If you are interested in a multi node environment to facilitate data exchange (pub-sub) between two nodes, use the repository <a href="https://github.com/IATA-Cargo/one-record-two-nodes">ONE Record two nodes</a>.</p>
-<h4 id="creating-and-managing-logistics-objects">Creating and Managing Logistics Objects<a class="headerlink" href="#creating-and-managing-logistics-objects" title="Permanent link">&para;</a></h4>
-<p>Master the creation and management of Logistics Objects to support operations:</p>
-<p>- <strong>Object Creation</strong>: Use POST requests to create Logistics Objects like Pieces, Shipments, and custom entities. Ensure each object has a unique identifier (URI) for traceability.</p>
-<p>- <strong>Data Management</strong>: Implement PATCH and GET requests to update and retrieve logistics objects. Use appropriate data validation mechanisms to maintain data integrity across operations.</p>
-<p>- <strong>Implementing a use case</strong>: Consider implementating a use case involving multiple Logistics Objects. Refer to orchestration below.</p>
-<p><em>Please refer to documentation on the</em> <a href="https://iata-cargo.github.io/ONE-Record/development/API-Security/">API</a></p>
-<h3 id="3-understanding-and-implementing-data-orchestration">3. Understanding and Implementing Data Orchestration<a class="headerlink" href="#3-understanding-and-implementing-data-orchestration" title="Permanent link">&para;</a></h3>
-<p>Data orchestration is key to maximizing the potential of ONE Record:</p>
-<h4 id="overview-of-data-orchestration">Overview of Data Orchestration<a class="headerlink" href="#overview-of-data-orchestration" title="Permanent link">&para;</a></h4>
-<p>Data orchestration involves coordinating data management tasks across different logistics operations to ensure data consistency, reliability, and availability throughout the supply chain.</p>
-<h4 id="role-in-one-record">Role in ONE Record<a class="headerlink" href="#role-in-one-record" title="Permanent link">&para;</a></h4>
-<p>- <strong>Process Integration</strong>: Orchestration ensures data is seamlessly integrated into logistics workflows, facilitating efficient communication between all stakeholders.</p>
-<p>- <strong>Enhanced Visibility</strong>: By orchestrating data flows, stakeholders gain enhanced visibility into logistics operations, enabling more informed decision-making.</p>
-<h4 id="setting-up-orchestration">Setting Up Orchestration<a class="headerlink" href="#setting-up-orchestration" title="Permanent link">&para;</a></h4>
-<p>- <strong>Define Orchestration Goals</strong>: Identify what you aim to achieve through data orchestration, such as improved data consistency, reduced errors, or faster data access.</p>
-<p>- <strong>Select Orchestration Tools</strong>: Leverage appropriate tools and platforms that can automate data management processes and integrate with existing systems.</p>
-<h4 id="implementing-orchestration">Implementing Orchestration<a class="headerlink" href="#implementing-orchestration" title="Permanent link">&para;</a></h4>
-<p>- <strong>Workflow Design</strong>: Design workflows that define how data moves and transforms through various stages of logistics processes. Consider employing task scheduling and automated triggers to streamline operations.</p>
-<p>- <strong>Data Monitoring and Adjustments</strong>: Establish monitoring protocols to track data flows, identify bottlenecks, and make necessary adjustments to optimize performance.</p>
-<p><em>Please refer to documentation on the</em> <a href="https://iata-cargo.github.io/ONE-Record/development/Orchestration/">orchestration</a></p>
+<h2 id="xfwb-message">XFWB Message<a class="headerlink" href="#xfwb-message" title="Permanent link">&para;</a></h2>
+<h3 id="xfwb-purpose">XFWB purpose<a class="headerlink" href="#xfwb-purpose" title="Permanent link">&para;</a></h3>
+<p>XFWB message, and its predecessor FWB Message based on CIMP standard, is used to transmit complete Air Waybill data in accordance with IATA Cargo Services Conference Manual Resolution 600a. In reality we see multiple usage of the (X)FWB message that derive a bit from its original purpose. It can be the transmission of additional information (OCI for instance) or the update of goods description and weight/dimensions by a GHA. This page will focus on the main usage.</p>
+<h3 id="xfwb-mapping">XFWB Mapping<a class="headerlink" href="#xfwb-mapping" title="Permanent link">&para;</a></h3>
+<h4 id="proposed-mechanism">Proposed mechanism<a class="headerlink" href="#proposed-mechanism" title="Permanent link">&para;</a></h4>
+<p>XFWB data fields are mostly a mix of <code>Waybill</code>, <code>WaybillLineItem</code>, <code>Shipment</code>, <code>Pieces</code> and <code>TransportMovement</code> data in ONE Record realm.</p>
+<h4 id="usage-of-waybilllineitem-object">Usage of WaybillLineItem object<a class="headerlink" href="#usage-of-waybilllineitem-object" title="Permanent link">&para;</a></h4>
+<p>The <code>WaybillLineItem</code> object was introduced to properly share rate data as required in the Air Waybill. The <code>WaybillLineItem</code> has a n-to-1 relationship with a <code>Waybill</code> object and represents the different line items on the paper waybill with all their specifities based on the type of rating used. In order to stick to reality as much as possible, some data at line item level are taken from <code>Pieces</code> and <code>LoadingUnits</code> directly (dimensions, volume, ...). The <code>WaybillLineItem</code> object itself shall only contain <strong>rate</strong> specific data.</p>
+<p>It is important to note that the <code>WaybillLineItem</code> has been added <strong>only in the context of sharing Air Waybill data</strong>. When looking at Operations, digital twins shall be used (<code>Piece</code>, <code>Item</code>, <code>Product</code>, etc.)</p>
+<h4 id="transportmovement-information">TransportMovement information<a class="headerlink" href="#transportmovement-information" title="Permanent link">&para;</a></h4>
+<p>XFWB movement and routing details are mapped to <code>TransportMovement</code> objects. The proper linkage, starting from the <code>Waybill</code> is to to go through the <code>Booking</code> object which refers to the contractual engagements between a carrier and the freight forwarder. The various <code>TransportMovement</code>(s) planned for the transportation of the goods need to be linked to the <code>Booking</code> as an <code>ActivitySequence</code>. </p>
+<h4 id="usage-of-othercharge-object">Usage of OtherCharge object<a class="headerlink" href="#usage-of-othercharge-object" title="Permanent link">&para;</a></h4>
+<p>The <code>OtherCharge</code> object is used to record all charges, it refers to <code>&lt;ram:ApplicableLogisticsAllowanceCharge&gt;</code> grouping in XFWB message. Code List 1.2 "Other Charge Code" is used to properly identify the charges associated with the Prepaid/Collect indicator.</p>
+<p>Totals are not directly recorded in ONE Record as they can be directly calculated based on the existing data (e.g. filtering by type of charge and prepaid/collect indicator).</p>
+<h4 id="other-specific-mapping-guidelines">Other specific mapping guidelines<a class="headerlink" href="#other-specific-mapping-guidelines" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>DensityGroupCode</code> field will be linked to Distribution phase as the feedback received from the industry shows that it's not an operational data but used for the Sales &amp; Booking process part. It is then found on the <code>BookingShipment</code> object if required.</p>
+</li>
+<li>
+<p><code>Special Service Request</code> and <code>Other Shipping Instructions</code> code fields are not in ONE Record as there is no evidence of an actual referential and standard used for those. Moreover it seems stakeholders use SSR or OSI for the same purposes. Thus we have merged into <code>textualHandlingInstructions</code> property in ONE Record.</p>
+</li>
+<li>
+<p>In the <code>ApplicableRating</code> grouping, the <code>TypeCode</code> field is set to F (Facial) by default as it is the only value used with CXML.</p>
+</li>
+<li>
+<p>In the <code>ApplicalbeFreightRateServiceCharge</code> grouping, the <code>AppliedAmount</code> is not directly mapped as it is a total that needs to be derived from either the <strong>Rate</strong> or the multiplication of <strong>Rate</strong> and <strong>Chargeable weight</strong> depending on the type of charge. Refer to CSC Resolution 600a for further explanations.</p>
+</li>
+</ul>
 
 
 
@@ -3701,7 +3498,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction">
+          <a href="../orchestration-cxml/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CargoXML Mapping">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3711,20 +3508,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Introduction
+                CargoXML Mapping
               </div>
             </div>
           </a>
         
         
           
-          <a href="../resources/" class="md-footer__link md-footer__link--next" aria-label="Next: Resources">
+          <a href="../placi/" class="md-footer__link md-footer__link--next" aria-label="Next: PLACI implementation">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Resources
+                PLACI implementation
               </div>
             </div>
             <div class="md-footer__button md-icon">

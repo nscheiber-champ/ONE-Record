@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -1671,6 +1671,8 @@
       
         
       
+        
+      
     
     
     
@@ -1768,6 +1770,29 @@
   
   <span class="md-ellipsis">
     Code Lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Data-Model/skeleton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Skeleton indicator
     
   </span>
   
@@ -2165,6 +2190,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2225,6 +2254,52 @@
   
   <span class="md-ellipsis">
     CargoXML Mapping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Orchestration/xfwb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    XFWB Mapping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Orchestration/placi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PLACI implementation
     
   </span>
   
@@ -2313,10 +2388,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
             
   
   
@@ -2329,8 +2404,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             MOP mapping
           </label>
@@ -3157,11 +3232,14 @@
   <h1>ONE Record API Class Diagram</h1>
 
 <h2 id="one-record-api-class-diagram">ONE Record API Class Diagram<a class="headerlink" href="#one-record-api-class-diagram" title="Permanent link">&para;</a></h2>
-<p><strong>Version:</strong> 2.1.0 <strong>Status:</strong> Submitted to COTB</p>
+<p><strong>Version:</strong> 2.2.0 <strong>Status:</strong> Submitted to COTB</p>
 <pre class="mermaid"><code>classDiagram   
     direction LR   
 
     class LogisticsObject{                
+    }
+
+    class LogisticsEvent{                
     }
 
     class Organization{        
@@ -3255,11 +3333,13 @@
         + hasEventType: NotificationEventType
         + isTriggeredBy: ActionRequest [0..1]  
         + hasLogisticsObject: LogisticsObject [0..1]
-        + hasLogisticsObjectType: xsd:anyURI [0..1]            
+        + hasLogisticsObjectType: xsd:anyURI [0..1]
+        + hasLogisticsEvent[]: LogisticsEvent [*]               
     }
     Notification "1"--&gt; "0..1" LogisticsObject
     Notification "1" --&gt; "1" NotificationEventType
     Notification "1" --&gt; "0..1" ActionRequest    
+    Notification "1"--&gt; "0..*" LogisticsEvent 
 
     class Operation{
         + o: OperationObject
@@ -3306,6 +3386,8 @@
         &lt;&lt;Enumeration&gt;&gt;
         LOGISTICS_OBJECT_CREATED
         LOGISTICS_OBJECT_UPDATED
+        LOGISTICS_OBJECT_AVAILABLE
+        LOGISTICS_OBJECT_ACCESS_GRANTED
 
         LOGISTICS_EVENT_RECEIVED
 
@@ -3436,10 +3518,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": ["stable"], "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": ["stable"], "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../../js/extra.js"></script>
       

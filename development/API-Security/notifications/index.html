@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1829,6 +1829,8 @@
       
         
       
+        
+      
     
     
     
@@ -1926,6 +1928,29 @@
   
   <span class="md-ellipsis">
     Code Lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data-Model/skeleton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Skeleton indicator
     
   </span>
   
@@ -2323,6 +2348,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2383,6 +2412,52 @@
   
   <span class="md-ellipsis">
     CargoXML Mapping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Orchestration/xfwb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    XFWB Mapping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Orchestration/placi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PLACI implementation
     
   </span>
   
@@ -2471,10 +2546,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
             
   
   
@@ -2487,8 +2562,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             MOP mapping
           </label>
@@ -3426,6 +3501,9 @@ The properties and relationships to other data classes are visualized in the fol
     class LogisticsObject{                
     }
 
+    class LogisticsEvent{                
+    }
+
     class Organization{        
     }  
 
@@ -3451,16 +3529,20 @@ The properties and relationships to other data classes are visualized in the fol
         + hasEventType: NotificationEventType
         + isTriggeredBy: ActionRequest [0..1]  
         + hasLogisticsObject: LogisticsObject [0..1]
-        + hasLogisticsObjectType: xsd:anyURI [0..1]     
+        + hasLogisticsObjectType: xsd:anyURI [0..1] 
+        + hasLogisticsEvent[]: LogisticsEvent [*]    
     }
     Notification "1"--&gt; "0..1" LogisticsObject
     Notification "1" --&gt; "1" NotificationEventType
-    Notification "1" --&gt; "0..1" ActionRequest  
+    Notification "1" --&gt; "0..1" ActionRequest 
+    Notification "1"--&gt; "0..*" LogisticsEvent 
 
     class NotificationEventType{
         &lt;&lt;Enumeration&gt;&gt;
         LOGISTICS_OBJECT_CREATED
         LOGISTICS_OBJECT_UPDATED
+        LOGISTICS_OBJECT_AVAILABLE
+        LOGISTICS_OBJECT_ACCESS_GRANTED
 
         LOGISTICS_EVENT_RECEIVED
 
@@ -3523,7 +3605,7 @@ The properties and relationships to other data classes are visualized in the fol
 </table>
 <p>The HTTP body must contain a valid <a href="https://onerecord.iata.org/ns/api#Notification">Notification</a> in the format as specified by the Content-Type in the header.</p>
 <p>The publisher sends a notification request to the subscriber when a logistics object is created or updated. 
-If the subscriber chose to receive the entire logistics object body via sendLogisticsObjectBody=true field, then the whole object is sent.</p>
+If the subscriber chose to receive the entire logistics object body via <code>sendLogisticsObjectBody=true</code> field, then the whole object is sent.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If the embedded object of a LogisticsObject changed, the Notification#<a href="https://onerecord.iata.org/ns/api#hasChangedProperty">hasChangedProperty</a> will contain the IRI of the embeddedObject, for example: 
@@ -3690,7 +3772,8 @@ because <code>sendLogisticsObjectBody</code> in Subscription is set to <code>Fal
 <div class="language-http highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">No Content</span>
 </span></code></pre></div></p>
 <h3 id="example-1d">Example 1D<a class="headerlink" href="#example-1d" title="Permanent link">&para;</a></h3>
-<p>The following example shows a <code>LOGISTICS_EVENT_RECEIVED</code> Notification after a LogisticsEvent is submitted.  </p>
+<p>The following example shows a <code>LOGISTICS_EVENT_RECEIVED</code> Notification after a LogisticsEvent is submitted. 
+The notification will include a link to the Logistics Event via the defined <a href="https://onerecord.iata.org/ns/api#hasEventType">hasEventType</a> property, which SHOULD be used only in case the <a href="https://onerecord.iata.org/ns/api#hasEventType">hasEventType</a> is equal to <code>LOGISTICS_EVENT_RECEIVED</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Notifications will be triggered for the creation of a new Logistics Event on a Logistics Object solely when the subscription property <a href="https://onerecord.iata.org/ns/api#includeSubscriptionEventType">'includeSubscriptionEventType'</a> contains the value <a href="https://onerecord.iata.org/ns/api#LOGISTICS_EVENT_RECEIVED">'LOGISTICS_EVENT_RECEIVED'</a>. On the contrary, this notification will be omitted.</p>
@@ -3713,8 +3796,11 @@ because <code>sendLogisticsObjectBody</code> in Subscription is set to <code>Fal
 </span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">    </span><span class="nt">&quot;api:hasLogisticsObjectType&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">        </span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema#anyURI&quot;</span><span class="p">,</span>
 </span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">        </span><span class="nd">&quot;@value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://onerecord.iata.org/ns/cargo#Shipment&quot;</span>
-</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span>
-</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="p">}</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">    </span><span class="nt">&quot;api:hasLogisticsEvent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">        </span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://1r.example.com/logistics-objects/1a8ded38-1804-467c-a369-81a411416b3c/logistics-events/a42e3785-9e6d-4b80-b69f-8ff75bfc3091&quot;</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="p">}</span>
 </span></code></pre></div>
 <em>(<a href="../examples/Notification_example4.json">Notification_example4.json</a>)</em></p>
 <p>Response:
@@ -3843,10 +3929,10 @@ because <code>sendLogisticsObjectBody</code> in Subscription is set to <code>Fal
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": ["stable"], "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": ["stable"], "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       

@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1922,6 +1922,8 @@
       
         
       
+        
+      
     
     
     
@@ -2019,6 +2021,29 @@
   
   <span class="md-ellipsis">
     Code Lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data-Model/skeleton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Skeleton indicator
     
   </span>
   
@@ -2416,6 +2441,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2476,6 +2505,52 @@
   
   <span class="md-ellipsis">
     CargoXML Mapping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Orchestration/xfwb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    XFWB Mapping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Orchestration/placi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PLACI implementation
     
   </span>
   
@@ -2564,10 +2639,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
             
   
   
@@ -2580,8 +2655,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             MOP mapping
           </label>
@@ -3597,11 +3672,16 @@ This enables users and holders to view and revoke action requests, and enables h
 <li>An <a href="https://onerecord.iata.org/ns/api#ActionRequest">ActionRequest</a> MUST be accessible via the URI of the <a href="https://onerecord.iata.org/ns/api#ActionRequest">ActionRequest</a> (requires sufficient permissions)</li>
 <li>An <a href="https://onerecord.iata.org/ns/api#ActionRequest">ActionRequest</a> MUST only be accepted or reject by the <a href="../concepts/#holder-of-a-logistics-object"><code>Holder of the LogisticsObject</code></a></li>
 <li>A <a href="https://onerecord.iata.org/ns/api#VerificationRequest">VerificationRequest</a> MUST only be acknowledged by the <a href="../concepts/#holder-of-a-logistics-object"><code>Holder of the LogisticsObject</code></a></li>
-<li>An <a href="https://onerecord.iata.org/ns/api#ActionRequest">ActionRequest</a> where <a href="https://onerecord.iata.org/ns/api#requestedBy">isRequestedBy</a> is the <a href="../concepts/#holder-of-a-logistics-object"><code>Holder of the LogisticsObject</code></a> SHOULD be accepted and processed directly.</li>
-<li>An <a href="https://onerecord.iata.org/ns/api#ActionRequest">ActionRequest</a> MUST only be revoked as long as it is in <code>REQUEST_PENDING</code> status.</li>
+<li>
+<p>An <a href="https://onerecord.iata.org/ns/api#ActionRequest">ActionRequest</a> where <a href="https://onerecord.iata.org/ns/api#requestedBy">isRequestedBy</a> is the <a href="../concepts/#holder-of-a-logistics-object"><code>Holder of the LogisticsObject</code></a> SHOULD be accepted and processed directly.</p>
+</li>
+<li>
+<p><a href="https://onerecord.iata.org/ns/api#ChangeRequest">ChangeRequest</a> and <a href="https://onerecord.iata.org/ns/api#VerificationRequest">VerificationRequest</a> MUST only be revoked as long as it is in <code>REQUEST_PENDING</code> status.</p>
+</li>
+<li><a href="https://onerecord.iata.org/ns/api#AccessDelegationRequest">AccessDelegationRequest</a> and <a href="https://onerecord.iata.org/ns/api#SubscriptionRequest">SubscriptionRequest</a> can be revoked as long as they are in <code>REQUEST_PENDING</code> or <code>REQUEST_ACCEPTED</code> status.</li>
 <li>An <a href="https://onerecord.iata.org/ns/api#AccessDelegationRequest">AccessDelegationRequest</a> MUST only be revoked by the <code>Delegator</code> or the <code>Delegate</code></li>
 <li>A <a href="https://onerecord.iata.org/ns/api#SubscriptionRequest">SubscriptionRequest</a> MUST only be revoked by the <code>Requestor</code>/<code>Subscriber</code> or the <code>Publisher</code></li>
-<li>A <a href="https://onerecord.iata.org/ns/api#VerificationRequest">VerificationRequest</a> MUST only be revoked by the <code>Requestor</code> or the <a href="../concepts/#holder-of-a-logistics-object"><code>Holder of the LogisticsObject</code></a></li>
+<li>A <a href="https://onerecord.iata.org/ns/api#VerificationRequest">VerificationRequest</a> or a <a href="https://onerecord.iata.org/ns/api#ChangeRequest">ChangeRequest</a> MUST only be revoked by the <code>Requestor</code> or the <a href="../concepts/#holder-of-a-logistics-object"><code>Holder of the LogisticsObject</code></a></li>
 <li>If errors occur while processing an accepted <a href="https://onerecord.iata.org/ns/api#ActionRequest">ActionRequest</a>, the <a href="https://onerecord.iata.org/ns/api#hasRequestStatus">hasRequestStatus</a> of this <a href="https://onerecord.iata.org/ns/api#ActionRequest">ActionRequest</a> MUST be changed to <a href="https://onerecord.iata.org/ns/api#REQUEST_FAILED">REQUEST_FAILED</a></li>
 </ul>
 <p><strong>ActionRequest state diagram for AccessDelegationRequest, ChangeRequest, and SubscriptionRequest</strong></p>
@@ -3618,11 +3698,16 @@ This enables users and holders to view and revoke action requests, and enables h
     REQUEST_REVOKED --&gt; [*]
 
     REQUEST_ACCEPTED --&gt; [*]        
-    REQUEST_ACCEPTED --&gt; REQUEST_FAILED:  an error has occurred        
+    REQUEST_ACCEPTED --&gt; REQUEST_FAILED:  an error has occurred
+    REQUEST_ACCEPTED --&gt; REQUEST_REVOKED: revocation requested      
 
     REQUEST_FAILED --&gt; [*]
 
     REQUEST_REJECTED --&gt; [*]    </code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a href="https://onerecord.iata.org/ns/api#AccessDelegationRequest">AccessDelegationRequest</a> and <a href="https://onerecord.iata.org/ns/api#SubscriptionRequest">SubscriptionRequest</a> may be revoked while in the <code>REQUEST_ACCEPTED</code> status. In contrast, once <a href="https://onerecord.iata.org/ns/api#ChangeRequest">ChangeRequest</a> and <a href="https://onerecord.iata.org/ns/api#VerificationRequest">VerificationRequest</a> are accepted, they cannot be revoked; a new action request must be submitted instead.</p>
+</div>
 <p><strong>ActionRequest state diagram for VerificationRequest</strong></p>
 <p><pre class="mermaid"><code>    stateDiagram-v2
 
@@ -3963,14 +4048,14 @@ and the publisher to obtain the current status of the request and subscription d
 </span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">             </span><span class="s2">&quot;api:hasErrorDetail&quot;</span>:<span class="o">{</span>
 </span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">                </span><span class="s2">&quot;@type&quot;</span>:<span class="s2">&quot;api:ErrorDetail&quot;</span>,
 </span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">                </span><span class="s2">&quot;api:hasProperty&quot;</span>:<span class="o">{</span>
-</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">                   </span><span class="s2">&quot;@value&quot;</span>:<span class="s2">&quot;https: //onerecord.iata.org/ns/cargo#goodsDescription&quot;</span>,
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">                   </span><span class="s2">&quot;@value&quot;</span>:<span class="s2">&quot;https://onerecord.iata.org/ns/cargo#goodsDescription&quot;</span>,
 </span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">                   </span><span class="s2">&quot;@type&quot;</span>:<span class="s2">&quot;xsd:anyURI&quot;</span>
 </span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">                </span><span class="o">}</span>
 </span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">             </span><span class="o">}</span>
 </span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">          </span><span class="o">}</span>
 </span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">       </span><span class="o">]</span>,
 </span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">       </span><span class="s2">&quot;api:hasRevision&quot;</span>:<span class="o">{</span>
-</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">          </span><span class="s2">&quot;@type&quot;</span>:<span class="s2">&quot;http: //www.w3.org/2001/XMLSchema#positiveInteger&quot;</span>,
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">          </span><span class="s2">&quot;@type&quot;</span>:<span class="s2">&quot;http://www.w3.org/2001/XMLSchema#positiveInteger&quot;</span>,
 </span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">          </span><span class="s2">&quot;@value&quot;</span>:<span class="s2">&quot;1&quot;</span>
 </span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">       </span><span class="o">}</span>,
 </span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="w">       </span><span class="s2">&quot;api:notifyRequestStatusChange&quot;</span>:true
@@ -4301,10 +4386,10 @@ The reason for this is that <em>only the holder of the logistics object</em> MAY
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": ["stable"], "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": ["stable"], "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       
