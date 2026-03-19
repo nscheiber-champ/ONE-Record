@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
@@ -3960,9 +3960,16 @@
     class Error{        
         + hasErrorDetail[]: ErrorDetail [1..*]
         + hasTitle: xsd:string
+        + hasSeverity: Severity[0..1]
     }
+
     Error "1" --&gt; "*" ErrorDetail
 
+    class Severity{
+        &lt;&lt;Enumeration&gt;&gt;
+        WARNING
+        ERROR
+    }
     class ErrorDetail{
         + hasCode: xsd:string  [0..1]
         + hasMessage: xsd:string [0..1]
