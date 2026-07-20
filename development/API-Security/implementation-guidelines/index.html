@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -4664,16 +4664,16 @@ With this information, the ONE Record client can proceed accordingly.</p>
 <td>xsd:string</td>
 </tr>
 <tr>
-<td><strong>hasErrorDetail</strong></td>
-<td>details of the error</td>
-<td>no</td>
-<td>api:ErrorDetail</td>
-</tr>
-<tr>
 <td><strong>hasSeverity</strong></td>
 <td>Severity of the error</td>
 <td>no</td>
 <td>api:Severity</td>
+</tr>
+<tr>
+<td><strong>hasErrorDetail</strong></td>
+<td>details of the error</td>
+<td>no</td>
+<td>api:ErrorDetail</td>
 </tr>
 <tr>
 <td>- hasCode</td>
@@ -4749,13 +4749,86 @@ In this scenario, the property <a href="https://onerecord.iata.org/ns/api#hasCod
 <td>Error</td>
 </tr>
 <tr>
+<td>422</td>
+<td>Unprocessable content</td>
+<td>Error</td>
+</tr>
+<tr>
 <td>500</td>
 <td> Internal Server Error</td>
 <td>Error</td>
 </tr>
 </tbody>
 </table>
+<p>To harmonize error responses, this section defines a common error response structure.</p>
+<table>
+<thead>
+<tr>
+<th>HTTP status code</th>
+<th>Title</th>
+<th>Message in ErrorDetails</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>400</code></td>
+<td><code>Invalid body request</code></td>
+<td>The request body is missing, malformed, or cannot be parsed.</td>
+</tr>
+<tr>
+<td><code>400</code></td>
+<td><code>Invalid query parameter request</code></td>
+<td>The query parameter is missing, malformed, or cannot be parsed.</td>
+</tr>
+<tr>
+<td><code>400</code></td>
+<td><code>Invalid resource</code></td>
+<td>The request body does not conform to the expected ONE Record resource structure.</td>
+</tr>
+<tr>
+<td><code>401</code></td>
+<td><code>Not authenticated or expired token</code></td>
+<td>The request does not contain valid authentication credentials, or the provided token is expired.</td>
+</tr>
+<tr>
+<td><code>403</code></td>
+<td><code>Not authorized to perform action</code></td>
+<td>The authenticated party is not authorized to perform the requested action.</td>
+</tr>
+<tr>
+<td><code>404</code></td>
+<td><code>Resource not found</code></td>
+<td>The requested resource cannot be found.</td>
+</tr>
+<tr>
+<td><code>405</code></td>
+<td><code>Method not allowed</code></td>
+<td>The HTTP method is not supported for the requested resource.</td>
+</tr>
+<tr>
+<td><code>409</code></td>
+<td><code>Identifier conflict</code></td>
+<td>A resource with the specified identifier already exists, or the request conflicts with the current state of the resource.</td>
+</tr>
+<tr>
+<td><code>415</code></td>
+<td><code>Unsupported content type</code></td>
+<td>The request content type is not supported by the endpoint.</td>
+</tr>
+<tr>
+<td><code>422</code></td>
+<td><code>Unprocessable content</code></td>
+<td>The request body is syntactically valid, but it cannot be processed because it does not satisfy semantic, validation, or business rules.</td>
+</tr>
+<tr>
+<td><code>500</code></td>
+<td><code>Internal server error</code></td>
+<td>The server encountered an unexpected condition that prevented it from fulfilling the request.</td>
+</tr>
+</tbody>
+</table>
 <p>There is a list of non-exhaustive JSON-LD syntax error types (relative to 400 Bad Request error family) on the official <a href="https://www.w3.org/TR/json-ld-api/#error-handling">JSON-LD API specifications website</a>.</p>
+<p>If an error is associated with a specific property or resource, the <code>hasProperty</code> and <code>hasResource</code> properties SHOULD be used in the error details to identify the affected element.</p>
 <p><strong>Example</strong></p>
 <p>A ONE Record client requests a Logistics Object without having sufficient access and a ONE Record server responses with a HTTP error code: <code>403 Forbidden</code>. The http response body contains the Error including the error code.</p>
 <p>Response to a failed synchronous API GET Request:</p>
@@ -4773,13 +4846,13 @@ In this scenario, the property <a href="https://onerecord.iata.org/ns/api#hasCod
 </span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="s2">&quot;@language&quot;</span>:<span class="w"> </span><span class="s2">&quot;en-US&quot;</span>
 </span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">   </span><span class="o">}</span>,
 </span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">   </span><span class="s2">&quot;@type&quot;</span>:<span class="w"> </span><span class="s2">&quot;api:Error&quot;</span>,
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">   </span><span class="s2">&quot;@id&quot;</span>:<span class="w"> </span><span class="s2">&quot;_:b0&quot;</span>,
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">   </span><span class="s2">&quot;@id&quot;</span>:<span class="w"> </span><span class="s2">&quot;internal:c42d3c13-1ddb-4e7e-aa1d-f4299c5716b3&quot;</span>,
 </span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">   </span><span class="s2">&quot;api:hasTitle&quot;</span>:<span class="w"> </span><span class="s2">&quot;Not authorized to retrieve the Logistics Object&quot;</span>,
 </span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">   </span><span class="s2">&quot;api:hasSeverity&quot;</span>:<span class="w"> </span><span class="o">{</span><span class="s2">&quot;@id&quot;</span>:<span class="s2">&quot;api:ERROR&quot;</span><span class="o">}</span>,
 </span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">   </span><span class="s2">&quot;api:hasErrorDetail&quot;</span>:<span class="w"> </span><span class="o">[</span>
 </span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">      </span><span class="o">{</span>
 </span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">         </span><span class="s2">&quot;@type&quot;</span>:<span class="w"> </span><span class="s2">&quot;api:ErrorDetail&quot;</span>,
-</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">         </span><span class="s2">&quot;@id&quot;</span>:<span class="w"> </span><span class="s2">&quot;_:b1&quot;</span>,
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">         </span><span class="s2">&quot;@id&quot;</span>:<span class="w"> </span><span class="s2">&quot;internal:3b249a9b-7219-41d4-8ea5-2e814560f852&quot;</span>,
 </span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">         </span><span class="s2">&quot;api:hasCode&quot;</span>:<span class="w"> </span><span class="s2">&quot;403&quot;</span>,
 </span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">         </span><span class="s2">&quot;api:hasMessage&quot;</span>:<span class="w"> </span><span class="s2">&quot;Authenticated client could not be found in ACL for the Logistics Object&quot;</span>,
 </span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">         </span><span class="s2">&quot;api:hasResource&quot;</span>:<span class="w"> </span><span class="s2">&quot;http://1r.example.com/logistics-objects/11ccfb7c-3643-41db-8098-740fccd97c93&quot;</span>
@@ -4886,12 +4959,12 @@ The request HTTP header <code>Accept-Language</code> SHOULD be used by the ONE R
 </span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">      </span><span class="s2">&quot;@language&quot;</span>:<span class="w"> </span><span class="s2">&quot;de-DE&quot;</span>
 </span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">   </span><span class="o">}</span>,
 </span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">   </span><span class="s2">&quot;@type&quot;</span>:<span class="w"> </span><span class="s2">&quot;api:Error&quot;</span>,
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">   </span><span class="s2">&quot;@id&quot;</span>:<span class="w"> </span><span class="s2">&quot;_:b0&quot;</span>,
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">   </span><span class="s2">&quot;@id&quot;</span>:<span class="w"> </span><span class="s2">&quot;internal:9c5bda2d-60ca-4b0a-b891-aab9136bd056&quot;</span>,
 </span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">   </span><span class="s2">&quot;api:hasTitle&quot;</span>:<span class="w"> </span><span class="s2">&quot;Logistics Object nicht gefunden&quot;</span>,
 </span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">   </span><span class="s2">&quot;api:hasErrorDetail&quot;</span>:<span class="w"> </span><span class="o">[</span>
 </span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">      </span><span class="o">{</span>
 </span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">         </span><span class="s2">&quot;@type&quot;</span>:<span class="w"> </span><span class="s2">&quot;api:ErrorDetail&quot;</span>,
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">         </span><span class="s2">&quot;@id&quot;</span>:<span class="w"> </span><span class="s2">&quot;_:b1&quot;</span>,
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">         </span><span class="s2">&quot;@id&quot;</span>:<span class="w"> </span><span class="s2">&quot;internal:2d160189-f64b-43ba-a044-27fd39aa7579&quot;</span>,
 </span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">         </span><span class="s2">&quot;api:hasCode&quot;</span>:<span class="w"> </span><span class="s2">&quot;404&quot;</span>,
 </span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">         </span><span class="s2">&quot;api:hasMessage&quot;</span>:<span class="w"> </span><span class="s2">&quot;Es konnte kein Logistics Object mit der angegebenen URI in der Datenbank gefunden werden.&quot;</span>,
 </span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">         </span><span class="s2">&quot;api:hasResource&quot;</span>:<span class="w"> </span><span class="s2">&quot;https://1r.example.com/1a8ded38-1804-467c-a369-81a411416b7c&quot;</span>
@@ -5017,7 +5090,7 @@ For example, it can be useful to decouple Notification queuing and actual sendin
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": ["stable"], "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       
